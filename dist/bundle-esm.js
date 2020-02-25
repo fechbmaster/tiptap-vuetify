@@ -7349,6 +7349,10 @@ function (_super) {
     this.$emit(EVENTS.INPUT, output, info);
   };
 
+  TiptapVuetify.prototype.onFocusOut = function (event) {
+    this.$emit('focusout', event);
+  };
+
   TiptapVuetify.prototype.beforeDestroy = function () {
     if (this.editor) this.editor.destroy();
   };
@@ -7435,7 +7439,7 @@ function (_super) {
 /* script */
 const __vue_script__$4 = TiptapVuetify;
 /* template */
-var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.editor)?_c('div',{staticClass:"tiptap-vuetify-editor"},[(_vm.availableActions.bubbleMenu.length && _vm.editor.options.editable)?_c('bubble',{attrs:{"editor":_vm.editor,"actions":_vm.availableActions.bubbleMenu}}):_vm._e(),_vm._v(" "),(_vm.$props[_vm.PROPS.TYPE] === _vm.EDITOR_TYPES_ENUM.card)?_c('VCard',_vm._b({},'VCard',_vm.$props[_vm.PROPS.CARD_PROPS],false),[_vm._t("toolbar-before"),_vm._v(" "),(_vm.availableActions.toolbar.length)?_c('toolbar',{attrs:{"editor":_vm.editor,"actions":_vm.availableActions.toolbar,"toolbar-attributes":_vm.$props[_vm.PROPS.TOOLBAR_ATTRIBUTES]},scopedSlots:_vm._u([(_vm.$scopedSlots.toolbar)?{key:"default",fn:function(scopedSlot){return [_vm._t("toolbar",null,null,scopedSlot)]}}:null],null,true)}):_vm._e(),_vm._v(" "),_vm._t("toolbar-after"),_vm._v(" "),_c('editor-content',{staticClass:"tiptap-vuetify-editor__content",style:(_vm.contentDynamicStyles),attrs:{"editor":_vm.editor}}),_vm._v(" "),_vm._t("footer")],2):_vm._e()],1):_vm._e()};
+var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.editor)?_c('div',{staticClass:"tiptap-vuetify-editor"},[(_vm.availableActions.bubbleMenu.length && _vm.editor.options.editable)?_c('bubble',{attrs:{"editor":_vm.editor,"actions":_vm.availableActions.bubbleMenu}}):_vm._e(),_vm._v(" "),(_vm.$props[_vm.PROPS.TYPE] === _vm.EDITOR_TYPES_ENUM.card)?_c('VCard',_vm._b({on:{"focusout":function($event){return _vm.onFocusOut($event)}}},'VCard',_vm.$props[_vm.PROPS.CARD_PROPS],false),[_vm._t("toolbar-before"),_vm._v(" "),(_vm.availableActions.toolbar.length)?_c('toolbar',{attrs:{"editor":_vm.editor,"actions":_vm.availableActions.toolbar,"toolbar-attributes":_vm.$props[_vm.PROPS.TOOLBAR_ATTRIBUTES]},scopedSlots:_vm._u([(_vm.$scopedSlots.toolbar)?{key:"default",fn:function(scopedSlot){return [_vm._t("toolbar",null,null,scopedSlot)]}}:null],null,true)}):_vm._e(),_vm._v(" "),_vm._t("toolbar-after"),_vm._v(" "),_c('editor-content',{staticClass:"tiptap-vuetify-editor__content",style:(_vm.contentDynamicStyles),attrs:{"editor":_vm.editor}}),_vm._v(" "),_vm._t("footer")],2):_vm._e()],1):_vm._e()};
 var __vue_staticRenderFns__$4 = [];
 
   /* style */

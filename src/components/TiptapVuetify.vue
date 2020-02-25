@@ -12,6 +12,7 @@
     <VCard
       v-if="$props[PROPS.TYPE] === EDITOR_TYPES_ENUM.card"
       v-bind="$props[PROPS.CARD_PROPS]"
+      @focusout="onFocusOut($event)"
     >
       <slot name="toolbar-before" />
 
@@ -255,6 +256,10 @@ export default class TiptapVuetify extends Vue {
     }
 
     this.$emit(EVENTS.INPUT, output, info)
+  }
+
+  onFocusOut (event) {
+    this.$emit('focusout', event)
   }
 
   beforeDestroy () {
