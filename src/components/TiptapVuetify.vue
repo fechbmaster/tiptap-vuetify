@@ -230,7 +230,10 @@ export default class TiptapVuetify extends Vue {
         }
       },
       content: this[PROPS.VALUE],
-      onUpdate: this.onUpdate.bind(this)
+      onUpdate: this.onUpdate.bind(this),
+      onFocus: (event) => {
+        this.$emit('focus', event)
+      }
     }))!
 
     this.$emit(EVENTS.INIT, {
